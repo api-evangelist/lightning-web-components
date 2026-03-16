@@ -1,151 +1,42 @@
+aid: lightning-web-components
 name: Lightning Web Components
-description: Salesforce Lightning Web Components (LWC) is a modern JavaScript framework for building user interfaces on the Salesforce platform using web standards.
-image: https://developer.salesforce.com/resource/images/lwc-logo.png
-created: 2024-01-15 00:00:00+00:00
-modified: 2024-01-15 00:00:00+00:00
-specificationVersion: '0.16'
-url: https://developer.salesforce.com/apis/lwc
-apis:
-- name: Lightning Web Components Runtime API
-  description: Core JavaScript APIs for building Lightning Web Components including decorators, wire service, and component lifecycle methods
-  image: https://developer.salesforce.com/resource/images/lwc-runtime.png
-  humanUrl: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
-  baseUrl: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
-  tags:
+description: >-
+  Salesforce Lightning Web Components (LWC) is a modern JavaScript framework
+  for building user interfaces on the Salesforce platform using web standards.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Lightning Web Components
+  - Salesforce
   - JavaScript
   - Web Components
   - Frontend
-  - Salesforce
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
-  - type: OpenAPISpecification
-    url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference
-  - type: Swagger
-    url: https://developer.salesforce.com/docs/apis/lwc/swagger.json
-  contact:
-  - FN: Salesforce Developer Relations
-    email: developer@salesforce.com
-    url: https://developer.salesforce.com/support
-- name: Lightning Platform API
-  description: RESTful and SOAP APIs for integrating with Salesforce data and metadata from Lightning Web Components
-  image: https://developer.salesforce.com/resource/images/platform-api.png
-  humanUrl: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/
-  baseUrl: https://yourInstance.salesforce.com/services/data/v59.0/
-  tags:
-  - REST
-  - SOAP
-  - Integration
-  - Salesforce
-  - Data
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/
-  - type: OpenAPISpecification
-    url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_list.htm
-  - type: Authentication
-    url: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm
-  contact:
-  - FN: Salesforce API Support
-    email: api-support@salesforce.com
-    url: https://developer.salesforce.com/support
-- name: Lightning Data Service (LDS)
-  description: Wire adapters and APIs for accessing Salesforce data reactively in Lightning Web Components without writing server-side Apex code
-  image: https://developer.salesforce.com/resource/images/lds-logo.png
-  humanUrl: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data
-  baseUrl: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data
-  tags:
-  - Data Service
-  - Wire Service
-  - Caching
-  - Salesforce
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data
-  - type: Examples
-    url: https://github.com/trailheadapps/lwc-recipes
-  - type: Reference
-    url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_wire_adapters
-  contact:
-  - FN: Lightning Data Service Team
-    email: lds-feedback@salesforce.com
-- name: Lightning UI API
-  description: REST API for accessing Salesforce UI metadata, forms, and records with the same behavior as the Salesforce UI
-  image: https://developer.salesforce.com/resource/images/ui-api.png
-  humanUrl: https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/
-  baseUrl: https://yourInstance.salesforce.com/services/data/v59.0/ui-api/
-  tags:
-  - UI
-  - Metadata
-  - Forms
-  - Records
-  - REST
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/
-  - type: OpenAPISpecification
-    url: https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_all_endpoints.htm
-  - type: GettingStarted
-    url: https://developer.salesforce.com/docs/atlas.en-us.uiapi.meta/uiapi/ui_api_get_started.htm
-  contact:
-  - FN: UI API Team
-    email: uiapi-feedback@salesforce.com
-- name: Apex REST API
-  description: Custom REST endpoints created using Apex for Lightning Web Components to call custom business logic
-  image: https://developer.salesforce.com/resource/images/apex-logo.png
-  humanUrl: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest.htm
-  baseUrl: https://yourInstance.salesforce.com/services/apexrest/
-  tags:
-  - Apex
-  - REST
-  - Custom
-  - Server-side
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest.htm
-  - type: Examples
-    url: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest_code_sample.htm
-  - type: BestPractices
-    url: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest_best_practices.htm
-  contact:
-  - FN: Apex Development Team
-    email: apex-support@salesforce.com
-- name: Component Library
-  description: Reference documentation and interactive examples for base Lightning Web Components
-  image: https://developer.salesforce.com/resource/images/component-lib.png
-  humanUrl: https://developer.salesforce.com/docs/component-library/overview/components
-  baseUrl: https://developer.salesforce.com/docs/component-library/
-  tags:
-  - Components
-  - Library
-  - Reference
-  - UI
-  properties:
-  - type: Documentation
-    url: https://developer.salesforce.com/docs/component-library/overview/components
-  - type: Interactive
-    url: https://developer.salesforce.com/docs/component-library/bundle/lightning-input/example
-  - type: Repository
-    url: https://github.com/salesforce/base-components-recipes
-  contact:
-  - FN: Component Library Team
-    email: component-library@salesforce.com
+url: https://raw.githubusercontent.com/api-evangelist/lightning-web-components/refs/heads/main/apis.yml
+created: '2024-01-15'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: lightning-web-components:lightning-web-components
+    name: Lightning Web Components Runtime API
+    description: >-
+      Core JavaScript APIs for building Lightning Web Components including
+      decorators, wire service, and component lifecycle methods.
+    humanURL: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
+    tags:
+      - JavaScript
+      - Web Components
+      - Frontend
+      - Salesforce
+    properties:
+      - type: Documentation
+        url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
+common:
+  - url: https://developer.salesforce.com/docs/component-library/overview/components
+    type: Documentation
+  - url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction
+    type: GettingStarted
+  - url: https://github.com/trailheadapps/lwc-recipes
+    type: Examples
 maintainers:
-- FN: Salesforce Developer Relations
-  email: developer@salesforce.com
-  url: https://developer.salesforce.com
-tags:
-- Lightning Web Components
-- Salesforce
-- JavaScript
-- Web Components
-- Frontend
-- Cloud
-- Enterprise
-include:
-- name: Trailhead LWC Modules
-  url: https://trailhead.salesforce.com/content/learn/trails/build-lightning-web-components
-- name: LWC Recipes GitHub
-  url: https://github.com/trailheadapps/lwc-recipes
-- name: LWC Dev Guide
-  url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction
+  - FN: Kin Lane
+    email: kin@apievangelist.com
