@@ -6,11 +6,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Frontend
+  - JavaScript
   - Lightning Web Components
   - Salesforce
-  - JavaScript
   - Web Components
-  - Frontend
 url: https://raw.githubusercontent.com/api-evangelist/lightning-web-components/refs/heads/main/apis.yml
 created: '2024-01-15'
 modified: '2026-03-16'
@@ -23,10 +23,10 @@ apis:
       decorators, wire service, and component lifecycle methods.
     humanURL: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
     tags:
-      - JavaScript
-      - Web Components
       - Frontend
+      - JavaScript
       - Salesforce
+      - Web Components
     properties:
       - type: Documentation
         url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
