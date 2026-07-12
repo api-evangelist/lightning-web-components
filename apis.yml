@@ -31,6 +31,8 @@ apis:
       - type: Documentation
         url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
 common:
+  - type: DomainSecurity
+    url: security/lightning-web-components-domain-security.yml
   - url: https://developer.salesforce.com/docs/component-library/overview/components
     type: Documentation
   - url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction
