@@ -1,0 +1,44 @@
+generated: '2026-08-27'
+method: searched
+source: https://trust.salesforce.com/
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Trust and compliance surface applicable to Lightning Web Components. LWC OSS is a library and
+  operates no service of its own, so it holds no certifications directly. The operative trust
+  surface for components running on the Salesforce Platform is the parent brand's, recorded here
+  with that scope stated explicitly rather than claimed as an LWC certification.
+scope: parent-brand
+parent: Salesforce
+trust_center:
+  url: https://trust.salesforce.com/
+  status: 200
+  status_page: https://status.salesforce.com/
+  status_page_status: 200
+compliance_portal:
+  url: https://compliance.salesforce.com/
+  status: 200
+  documents_url: https://compliance.salesforce.com/en/documents
+  documents_status: 200
+  statement: '"Salesforce maintains a comprehensive set of compliance certifications and attestations."'
+  document_count_reported: 505
+certifications:
+  - name: PCI DSS
+    evidence: PCI ASV Network Scan documents listed across Hyperforce regions and first-party infrastructure at https://compliance.salesforce.com/en/documents
+  - name: IRAP
+    evidence: ACSC Essential 8 report (IRAP assessment) listed at https://compliance.salesforce.com/en/documents
+completeness_note: >-
+  The compliance document library reports 505 entries and paginates ten at a time; only the first
+  page was read in this pass. The two certifications above are the ones actually observed. SOC,
+  ISO 27001 and FedRAMP were NOT enumerated here and are deliberately not asserted — an honest
+  partial reading rather than a guessed list.
+lwc_specific:
+  certifications: []
+  note: >-
+    The Lightning Web Components open-source project itself publishes no certification, audit
+    report or trust page. Its security posture is expressed as a minimal-runtime-dependency policy
+    plus the SECURITY.md reporting channel — see
+    security/lightning-web-components-vulnerability-disclosure.yml.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

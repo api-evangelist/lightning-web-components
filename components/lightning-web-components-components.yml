@@ -1,0 +1,156 @@
+generated: '2026-08-27'
+method: searched
+source: https://unpkg.com/lightning-base-components@1.28.19-alpha/?meta (module inventory of the published npm package)
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: 'Client-side, embeddable UI components published by the Lightning Web Components project. Two distinct
+  surfaces: (1) the LWC framework itself, which compiles a component to a native custom element that any page can
+  mount; and (2) the lightning-* base component library, a catalogue of ready-made SLDS-styled components distributed
+  on npm as lightning-base-components and rendered natively on the Salesforce Platform. Component names below were
+  read from the published package file tree, not transcribed from documentation.'
+loader:
+  model: ES modules — components are imported, not script-tag loaded
+  core_import: import { LightningElement } from 'lwc';
+  base_component_import: import ... from 'lightning/<component>';
+  custom_element_interop: lwc:external renders a third-party custom element inside an LWC template; LWC components
+    themselves compile down to HTMLElement subclasses registered via customElements.define().
+  cdn:
+    available: false
+    note: No first-party CDN build is published. Distribution is npm-only; consumers bundle with @lwc/rollup-plugin
+      or @lwc/babel-plugin-component.
+packages:
+- name: lwc
+  role: framework runtime + LightningElement base class
+  version: 9.4.1
+  published: '2026-08-12'
+- name: lightning-base-components
+  role: lightning-* base component library for off-platform use
+  version: 1.28.19-alpha
+  published: '2026-05-15'
+  note: Latest published dist-tag is a pre-release (-alpha) build.
+module_count_total: 211
+public_component_count: 91
+families:
+- family: Forms and input
+  count: 20
+  components:
+  - lightning-input
+  - lightning-input-address
+  - lightning-input-location
+  - lightning-input-name
+  - lightning-textarea
+  - lightning-checkbox-group
+  - lightning-radio-group
+  - lightning-select
+  - lightning-combobox
+  - lightning-grouped-combobox
+  - lightning-dual-listbox
+  - lightning-slider
+  - lightning-picklist
+  - lightning-datepicker
+  - lightning-datetimepicker
+  - lightning-timepicker
+  - lightning-color-picker-custom
+  - lightning-color-picker-panel
+  - lightning-color-swatch
+  - lightning-lookup-address
+- family: Buttons and menus
+  count: 9
+  components:
+  - lightning-button
+  - lightning-button-group
+  - lightning-button-icon
+  - lightning-button-icon-stateful
+  - lightning-button-menu
+  - lightning-button-stateful
+  - lightning-menu-item
+  - lightning-menu-divider
+  - lightning-menu-subheader
+- family: Data display
+  count: 26
+  components:
+  - lightning-datatable
+  - lightning-tree-grid
+  - lightning-tree
+  - lightning-tree-item
+  - lightning-tile
+  - lightning-card
+  - lightning-badge
+  - lightning-pill
+  - lightning-pill-container
+  - lightning-avatar
+  - lightning-icon
+  - lightning-dynamic-icon
+  - lightning-static-map
+  - lightning-formatted-address
+  - lightning-formatted-date-time
+  - lightning-formatted-email
+  - lightning-formatted-location
+  - lightning-formatted-lookup
+  - lightning-formatted-name
+  - lightning-formatted-number
+  - lightning-formatted-phone
+  - lightning-formatted-rich-text
+  - lightning-formatted-text
+  - lightning-formatted-time
+  - lightning-formatted-url
+  - lightning-relative-date-time
+- family: Layout and navigation
+  count: 20
+  components:
+  - lightning-layout
+  - lightning-layout-item
+  - lightning-accordion
+  - lightning-accordion-section
+  - lightning-tabset
+  - lightning-tab
+  - lightning-stacked-tabset
+  - lightning-stacked-tab
+  - lightning-tab-bar
+  - lightning-breadcrumb
+  - lightning-breadcrumbs
+  - lightning-carousel
+  - lightning-carousel-image
+  - lightning-vertical-navigation
+  - lightning-vertical-navigation-item
+  - lightning-vertical-navigation-item-badge
+  - lightning-vertical-navigation-item-icon
+  - lightning-vertical-navigation-overflow
+  - lightning-vertical-navigation-section
+  - lightning-calendar
+- family: Overlays and feedback
+  count: 15
+  components:
+  - lightning-modal
+  - lightning-modal-body
+  - lightning-modal-footer
+  - lightning-modal-header
+  - lightning-dialog
+  - lightning-popup
+  - lightning-overlay
+  - lightning-toast
+  - lightning-alert
+  - lightning-spinner
+  - lightning-progress-bar
+  - lightning-progress-indicator
+  - lightning-progress-step
+  - lightning-progress-ring
+  - lightning-helptext
+- family: Device and platform
+  count: 1
+  components:
+  - lightning-barcode-scanner
+internal_modules_excluded:
+  count: 120
+  note: primitive*, slds*, iconSvgTemplates*, i18n* and *Utils/*Library modules are internal implementation detail
+    of the library and are not consumer-facing components.
+reference:
+- title: Lightning Component Library
+  url: https://developer.salesforce.com/docs/component-library/overview/components
+- title: LWC Recipes (live sample app)
+  url: https://recipes.lwc.dev/
+- title: Third-Party Web Components (Beta)
+  url: https://lwc.dev/guide/third_party_web_components
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

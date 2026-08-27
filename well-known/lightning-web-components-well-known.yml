@@ -1,0 +1,136 @@
+generated: '2026-08-27'
+method: probed
+source: live HTTPS probes of the LWC docs/OSS hosts, 2026-08-27
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Probe record for RFC 8615 /.well-known/ documents on every host associated with
+  Lightning Web Components. NOTHING WAS SERVED. lwc.dev answers every unknown path
+  with a 500 HTML error page (a catch-all, not a document); developer.salesforce.com
+  returns a 403 bot challenge to non-browser clients on every path including
+  /.well-known/*; www.salesforce.com 302-redirects every /.well-known/* path into the
+  marketing site. No WellKnown or SecurityTxt pointer is emitted, because no path
+  returned a 200 carrying a real document.
+hosts:
+  - host: lwc.dev
+    note: LWC open-source documentation host. Returns HTTP 500 with an HTML error body for any unknown path.
+    documents:
+      - path: /.well-known/security.txt
+        status: 500
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 500
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 500
+        file: null
+      - path: /.well-known/api-catalog
+        status: 500
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 500
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 500
+        file: null
+      - path: /.well-known/agent.json
+        status: 500
+        file: null
+  - host: developer.salesforce.com
+    note: >-
+      Salesforce developer portal (the humanURL host for the LWC Developer Guide). Returns a
+      403 bot-challenge HTML page to non-browser user agents on every path. The docs
+      themselves are demonstrably live in a browser, so this is an edge policy, not a dead host —
+      but no /.well-known/ document could be read.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: www.salesforce.com
+    note: Parent-brand corporate host. Every /.well-known/* path 302-redirects into the marketing site; salesforce.com apex returns 404.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 302
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 302
+        file: null
+      - path: /.well-known/api-catalog
+        status: 302
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 302
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 302
+        file: null
+      - path: /.well-known/agent.json
+        status: 302
+        file: null
+  - host: recipes.lwc.dev
+    note: First-party LWC Recipes sample app host.
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+summary:
+  documents_served: 0
+  pointer_emitted: false
+  pointer_reason: >-
+    No /.well-known/ path on any LWC host returned a 200 with a real document, so neither a
+    WellKnown nor a SecurityTxt pointer is wired into apis.yml. A recorded absence is the finding.
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery was run before concluding LWC publishes no machine-readable API
+    contract. No baseURL or servers[] host exists to probe, so the docs/OSS hosts were used.
+    Every candidate missed. This is the expected result for a compiler and rendering runtime —
+    LWC exposes a JavaScript API, not a network interface.
+  probes:
+    - url: https://lwc.dev/openapi.json
+      status: 500
+    - url: https://lwc.dev/openapi.yaml
+      status: 500
+    - url: https://lwc.dev/swagger.json
+      status: 500
+    - url: https://lwc.dev/api-docs
+      status: 500
+    - url: https://lwc.dev/graphql
+      status: 500
+    - url: https://lwc.dev/asyncapi.yaml
+      status: 500
+    - url: https://lwc.dev/?wsdl
+      status: 200
+      result: false-positive
+      note: Returns the lwc.dev homepage HTML, not a SOAP contract. The query string is ignored by the static host.
+    - url: https://recipes.lwc.dev/openapi.json
+      status: 404
+    - url: https://developer.salesforce.com/openapi.json
+      status: 403
+      note: Bot challenge, not a document. The docs host answers 403 to non-browser clients on every path.
+  conclusion: >-
+    No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Protobuf or WSDL contract is published for
+    Lightning Web Components, and none is expected for this product class.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

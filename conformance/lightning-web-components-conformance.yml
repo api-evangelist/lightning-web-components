@@ -1,0 +1,126 @@
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/ (LWC open-source developer guide) + https://github.com/salesforce/lwc
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Standards conformance for Lightning Web Components. LWC is a UI component framework, not an HTTP
+  API, so the cross-cutting API standards this pipeline normally checks (OAuth 2.0, OIDC, RFC 9457,
+  pagination, idempotency) do not apply. The standards that DO apply are the W3C/WHATWG web-component
+  family — and LWC's own documentation declares conformance to them explicitly, which is the
+  domain-standard signature for this market.
+domain_standard:
+  market: client-side UI component frameworks
+  standard: W3C / WHATWG Web Components (Custom Elements, Shadow DOM, HTML templates) + ECMAScript modules
+  declared: true
+  grade: verified
+  evidence:
+    - claim: >-
+        "Lightning Web Components uses standard HTML, modern JavaScript (ES6+), and the best of
+        native Web Components."
+      location: https://lwc.dev/ (Standards-Based section)
+    - claim: >-
+        The component lifecycle guide binds constructor() behaviour directly to the spec:
+        "These requirements from the HTML: Custom elements spec apply to the constructor()." —
+        super() first, no return statement, no document.write()/document.open(), no attribute or
+        child inspection before upgrade.
+      location: https://lwc.dev/guide/lifecycle
+    - claim: >-
+        "All JavaScript files in Lightning web components are ES modules." The default export must
+        be a class extending LightningElement, "a custom wrapper of the standard HTML element."
+      location: https://lwc.dev/guide/es_modules
+    - claim: >-
+        Interop with third-party web components is a first-class, documented path (lwc:external),
+        and the docs state custom elements "must define a component class that extends HTMLElement"
+        and "register the custom element within the CustomElementRegistry using
+        customElements.define(name, constructor)".
+      location: https://lwc.dev/guide/third_party_web_components
+    - claim: >-
+        @lwc/synthetic-shadow ships a Shadow DOM polyfill and @lwc/aria-reflection ships an ARIA
+        element reflection polyfill — implementations of the standards themselves, published to npm.
+      location: https://www.npmjs.com/package/@lwc/synthetic-shadow
+  note: >-
+    Reward-only signal. A buyer who already writes standards-based web components can consume LWC
+    output as native custom elements without a bespoke adapter; the docs describe exactly that path.
+standards:
+  - id: w3c-custom-elements
+    name: HTML Custom Elements (WHATWG HTML Living Standard)
+    conforms: true
+    evidence: >-
+      https://lwc.dev/guide/lifecycle cites the "HTML: Custom elements spec" as the normative source
+      for constructor() constraints; https://lwc.dev/guide/third_party_web_components documents
+      HTMLElement + CustomElementRegistry.define() interop.
+  - id: w3c-shadow-dom
+    name: Shadow DOM (DOM Living Standard)
+    conforms: true
+    evidence: >-
+      Native shadow DOM is the default encapsulation model; @lwc/synthetic-shadow is published as a
+      polyfill for engines without it, and https://lwc.dev/guide/light_dom documents the opt-out.
+  - id: ecmascript-modules
+    name: ECMAScript Modules (ES2015+)
+    conforms: true
+    evidence: 'https://lwc.dev/guide/es_modules — "All JavaScript files in Lightning web components are ES modules."'
+  - id: wai-aria
+    name: WAI-ARIA / ARIA element reflection
+    conforms: true
+    evidence: >-
+      https://lwc.dev/guide/accessibility documents focus management, tabindex semantics (0 and -1
+      only) and screen-reader attribute usage; @lwc/aria-reflection ships the ARIA reflection
+      polyfill.
+  - id: semver
+    name: Semantic Versioning 2.0.0
+    conforms: true
+    evidence: >-
+      https://lwc.dev/guide/versioning — "It adheres to semantic versioning (semver)
+      characteristics." Documented deviation: the minor number is also incremented when compiler
+      output changes.
+  - id: slds
+    name: Salesforce Lightning Design System (SLDS / SLDS 2)
+    conforms: true
+    evidence: >-
+      The LWC MCP toolset ships orchestrate_lwc_slds2_uplift, explore_slds_blueprints,
+      guide_slds_blueprints, explore_slds_styling and guide_slds_styling — SLDS blueprint and
+      styling-hook conformance tooling documented at
+      https://developer.salesforce.com/docs/platform/lwc/guide/mcp-lwc.html
+  - id: mcp
+    name: Model Context Protocol
+    conforms: true
+    evidence: >-
+      Salesforce publishes @salesforce/mcp with LWC-specific toolsets, documented in the LWC
+      Developer Guide at https://developer.salesforce.com/docs/platform/lwc/guide/mcp-intro.html
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    evidence: >-
+      Not applicable at the framework level. LWC exposes no HTTP surface of its own. The DX MCP
+      server reaches a Salesforce org through the Salesforce CLI's stored OAuth connection, but that
+      is the platform's authorization, not the framework's.
+  - id: rfc9457
+    name: RFC 9457 Problem Details for HTTP APIs
+    conforms: false
+    evidence: >-
+      Not applicable. LWC's error surface is compile-time and run-time diagnostics in the
+      LWC<NNNN> code format (see errors/lightning-web-components-error-codes.yml), not HTTP responses.
+  - id: pagination
+    name: HTTP pagination conventions
+    conforms: false
+    evidence: Not applicable — no HTTP collection endpoints.
+  - id: idempotency
+    name: HTTP idempotency keys
+    conforms: false
+    evidence: Not applicable — no HTTP write surface.
+compliance_certifications:
+  scope: parent-brand
+  note: >-
+    LWC OSS itself carries no certification program. Salesforce, LWC's parent, publishes its
+    compliance and certification inventory at the URLs below; components built with LWC and running
+    on the Salesforce Platform inherit that platform's certifications. Recorded with the parent-brand
+    scope stated rather than claimed as an LWC certification.
+  sources:
+    - url: https://compliance.salesforce.com/
+      status: 200
+    - url: https://trust.salesforce.com/en/compliance/
+      status: 200
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

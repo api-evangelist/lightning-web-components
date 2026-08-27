@@ -1,0 +1,92 @@
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/install
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Command-line surface for Lightning Web Components. LWC ships no monolithic `lwc` binary; the
+  first-party command surface is the Lightning Web Runtime (LWR) scaffolder and dev server invoked
+  through npm lifecycle scripts, plus the LWC compiler plugins driven by rollup or babel. Commands
+  below are transcribed verbatim from the project's own installation guide.
+cli:
+  name: Lightning Web Runtime (LWR)
+  binary: null
+  invocation: npm lifecycle scripts / npm init
+  package: https://www.npmjs.com/package/create-lwr
+  runtime_package: https://www.npmjs.com/package/lwr
+  version: 0.24.0
+  published: '2026-08-24'
+  repository: https://github.com/salesforce-experience-platform-emu/lwr
+  docs: https://lwc.dev/guide/install
+  prerequisites:
+    - Node.js
+install_methods:
+  - method: npm init (scaffolder, no global install)
+    command: npm init lwr@latest
+    note: >-
+      Interactive. Prompts for a project directory name (default lwr-project), then "Select Single
+      Page App", then "Select LWC".
+  - method: rollup integration (existing project)
+    command: npm install --save-dev lwc rollup @lwc/rollup-plugin @rollup/plugin-replace
+    note: The documented path when integrating LWC into an existing build rather than scaffolding.
+command_groups:
+  - group: Scaffold
+    commands:
+      - command: npm init lwr@latest
+        description: Create a new LWC project; guided setup that scaffolds a Single Page App with the LWC variant.
+  - group: Develop
+    commands:
+      - command: npm install
+        description: Install project dependencies in the scaffolded project directory.
+      - command: npm run start
+        description: Start the LWR development server for the project.
+  - group: Build
+    commands:
+      - command: rollup --config rollup.config.js
+        description: >-
+          Compile an LWC application via rollup using @lwc/rollup-plugin. Requires rollup.config.js
+          and lwc.config.json (which declares the modules[] resolution directories) at the repo root.
+  - group: Test
+    commands:
+      - command: npx sfdx-lwc-jest
+        description: >-
+          Run Jest against LWC components in a Salesforce DX workspace, via
+          @salesforce/sfdx-lwc-jest (v7.9.0, published 2026-04-01). Documented at https://lwc.dev/guide/test.
+  - group: Lint
+    commands:
+      - command: npx eslint --ext .js src
+        description: >-
+          Lint with the official rules in @lwc/eslint-plugin-lwc (v3.5.0) and the opinionated
+          preset @salesforce/eslint-config-lwc (v4.1.2).
+key_flows:
+  - name: New app from zero
+    steps:
+      - npm init lwr@latest
+      - cd YourProjectName
+      - npm install
+      - npm run start
+config_files:
+  - file: lwc.config.json
+    purpose: Instructs the LWC compiler how to resolve LWC modules; declares modules[].dir entries (for example src/modules).
+  - file: rollup.config.js
+    purpose: Declares the application entry point, output, and the @lwc/rollup-plugin + @rollup/plugin-replace plugin chain.
+related_cli:
+  - name: Salesforce CLI (sf)
+    package: https://www.npmjs.com/package/@salesforce/cli
+    version: 2.149.9
+    published: '2026-08-19'
+    scope: parent-brand
+    note: >-
+      The Salesforce CLI is the deploy/retrieve and org-management CLI for components targeting the
+      Salesforce Platform, and it is what brokers the org connection the DX MCP server consumes. It
+      is a Salesforce Platform tool rather than an LWC OSS tool, and is recorded here for that
+      relationship only — its command surface was not enumerated in this pass.
+deprecated:
+  - name: create-lwc-app / lwc-services
+    last_published: '2021-10-08'
+    note: >-
+      The former first-party scaffolder. Still resolvable on npm but not published since 2021 and no
+      longer the documented install path — lwc.dev now directs new projects to `npm init lwr`.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

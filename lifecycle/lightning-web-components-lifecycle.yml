@@ -1,0 +1,115 @@
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/versioning
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Versioning, breaking-change and deprecation posture for Lightning Web Components, read from the
+  project's own published versioning guide plus the salesforce/lwc GitHub release stream.
+versioning:
+  scheme: semver
+  pattern: major.minor.patch
+  current_version: 9.4.1
+  current_version_published: '2026-08-12'
+  statement: >-
+    "LWC open-source (OSS) follows a version number using the major.minor.patch pattern. It adheres
+    to semantic versioning (semver) characteristics."
+  rules:
+    - increment: patch
+      meaning: Non-critical fixes or internal code refactors (v2.49.0 to v2.49.1).
+    - increment: minor
+      meaning: New features and minor fixes (v2.49.1 to v2.50.0). Also incremented when the compiler output changes — a deliberate deviation from strict semver, documented as such.
+    - increment: major
+      meaning: Breaking changes (v2.50.0 to v3.0.0). A major increment also corresponds with a new API version because it introduces breaking changes for off-core components.
+  release_cadence: >-
+    Breaking changes ship independently of the Salesforce platform release schedule. Minor and patch
+    releases ship continuously — eight tagged releases between 2026-04-28 and 2026-08-13.
+  docs: https://lwc.dev/guide/versioning
+deprecation:
+  policy_published: true
+  policy_url: https://lwc.dev/guide/versioning
+  mechanism: component-level API versioning
+  statement: >-
+    "The LWC framework prides itself on backwards compatibility, and we strive to avoid breaking
+    your code when shipping a new release. Versioning allows us to ship new features, bug fixes, or
+    performance improvements while also allowing us to deprecate legacy features."
+  component_api_versioning:
+    declared_in: the component's *.js-meta.xml file, `apiVersion` element
+    default: >-
+      If an apiVersion value isn't provided, LWC defaults to the latest version. For LWC OSS the
+      component API version is always the latest version corresponding to the framework version.
+    platform_requirement: >-
+      From Winter '24 custom components for the Salesforce Platform are versioned; from Spring '25
+      setting an API version is required. Components saved before that continue to run as-is until
+      next modified.
+    guidance: >-
+      Salesforce recommends upgrading a component's API version one release at a time (for example
+      58.0 to 59.0), fixing errors and warnings, then repeating.
+    scope: Every HTML, CSS and JS file in a component corresponds to one API version.
+    docs: https://developer.salesforce.com/docs/platform/lwc/guide/create-version-components.html
+  breaking_change_log:
+    published: true
+    url: https://lwc.dev/guide/versioning
+    major_versions_documented:
+      - v8.0.0
+      - v7.0.0
+      - v6.0.0
+      - v5.0.0
+      - v4.0.0
+      - v3.0.0
+      - v2.0.0
+  sunset_headers:
+    rfc8594: false
+    note: >-
+      RFC 8594 Sunset / Deprecation headers are not applicable — LWC ships as an npm library and a
+      compiler, not as an HTTP service that could emit response headers.
+  deprecated_features_documented:
+    - feature: Deprecated synthetic custom element lifecycle
+      docs: https://lwc.dev/guide/lifecycle
+    - feature: '@track decorator (no longer required for reactivity since LWC 1.17; retained for backwards compatibility)'
+      docs: https://lwc.dev/guide/javascript_reactive
+platform_version_map:
+  note: >-
+    LWC OSS major versions map onto Salesforce Platform API versions and named releases. Published
+    verbatim in the versioning guide.
+  mappings:
+    - lwc_oss: v8.0.0
+      salesforce_api_version: '63.0'
+      release_name: Spring '25
+    - lwc_oss: v7.0.0
+      salesforce_api_version: '62.0'
+      release_name: Winter '25
+    - lwc_oss: v6.0.0
+      salesforce_api_version: '61.0'
+      release_name: Summer '24
+    - lwc_oss: v5.0.0
+      salesforce_api_version: '60.0'
+      release_name: Spring '24
+      note: API version 60.0 also includes changes from LWC OSS v4.0.0.
+    - lwc_oss: v3.0.0
+      salesforce_api_version: '59.0'
+      release_name: Winter '24
+    - lwc_oss: v2.50.0 and earlier
+      salesforce_api_version: '58.0'
+      release_name: Summer '23
+status_page:
+  published: true
+  url: https://status.salesforce.com/
+  scope: parent-brand
+  note: >-
+    LWC OSS is a library and has no runtime of its own to report on. The operative status surface
+    for components running on the Salesforce Platform is the parent brand's Salesforce Trust status
+    page. Recorded with that scope stated rather than claimed as an LWC-specific status page.
+  probed_status: 200
+sla:
+  published: false
+  note: >-
+    No SLA is published for the open-source framework. Platform SLAs, where they exist, are
+    contractual to the Salesforce org, not to the LWC library.
+support:
+  issues: https://github.com/salesforce/lwc/issues
+  community: https://lwc.dev/community
+  contributing: https://github.com/salesforce/lwc/blob/master/CONTRIBUTING.md
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

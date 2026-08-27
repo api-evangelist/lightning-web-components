@@ -1,0 +1,364 @@
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/error_codes
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: 'Error-code registry published by the Lightning Web Components project. LWC is a compiler
+  and browser/server runtime rather than an HTTP API, so its error surface is compile-time and run-time
+  diagnostics rather than RFC 9457 problem+json responses. Codes use the format "LWC0000: Error message".
+  An "error" is blocking and stops compilation, observed in terminal or CLI output; a "warning" is a non-blocking
+  diagnostic, observed in the browser web console. Some LWC codes wrap errors from underlying parsers
+  (Babel for JavaScript/TypeScript, a CSS parser for stylesheets, a template parser for HTML).'
+format: lwc-diagnostic-code
+envelope: 'LWC<NNNN>: <message>'
+severities:
+- error
+- warning
+transport: compile-time diagnostics (terminal / CLI) and run-time warnings (browser console) — not HTTP
+  responses
+code_count: 109
+codes:
+- code: LWC1001
+  description: Represents a generic, unexpected compilation error in the LWC compiler.
+  severity: error
+- code: LWC1002
+  description: Represents a warning in module resolution.
+  severity: warning
+- code: LWC1005
+  description: Represents an unsupported file extension error.
+  severity: error
+- code: LWC1006
+  description: Represents a source type error on transform() or transformSync().
+  severity: error
+- code: LWC1007
+  description: Represents a JavaScript transformer error caused by a syntax error.
+  severity: error
+- code: LWC1009
+  description: Represents a CSS transformer error when processing CSS stylesheet files.
+  severity: error
+- code: LWC1011
+  description: Represents an import path error.
+  severity: error
+- code: LWC1016
+  description: Raised when a Lightning web component tries to assign a value to a getter, which is not
+    permitted.
+  severity: error
+- code: LWC1021
+  description: Represents an error for an invalid outputConfig.sourcemap value.
+  severity: error
+- code: LWC1023
+  description: Represents an error on the options object.
+  severity: error
+- code: LWC1024
+  description: Represents a file content error.
+  severity: error
+- code: LWC1027
+  description: Represents an error that's thrown when a string is expected for an ID.
+  severity: error
+- code: LWC1028
+  description: Represents a template compiler error when the configuration parameter is not an object.
+  severity: error
+- code: LWC1030
+  description: Represents an unrecognized property error on the template compiler.
+  severity: error
+- code: LWC1034
+  description: Represents an error for an ambiguous attribute value.
+  severity: error
+- code: LWC1035
+  description: Represents an ambiguous attribute value error in the template compiler.
+  severity: error
+- code: LWC1036
+  description: Represents an error for a boolean attribute that's incorrectly set.
+  severity: error
+- code: LWC1037
+  description: Represents a boolean attribute value error.
+  severity: error
+- code: LWC1038
+  description: Represents a computed property access error in a template expression.
+  severity: error
+- code: LWC1039
+  description: Represents an iterator directive error.
+  severity: error
+- code: LWC1040
+  description: Represents an id value whitespace error.
+  severity: error
+- code: LWC1041
+  description: Represents a static id value error.
+  severity: error
+- code: LWC1042
+  description: Represents a duplicate id value error.
+  severity: error
+- code: LWC1043
+  description: Represents an attribute error on an event handler.
+  severity: error
+- code: LWC1044
+  description: Represents an error that's caused by using the for:each or for:item directive without the
+    other.
+  severity: error
+- code: LWC1045
+  description: Represents a literal value error on a for:each directive.
+  severity: error
+- code: LWC1046
+  description: Represents a value error on the for:index directive.
+  severity: error
+- code: LWC1047
+  description: Represents a value error on the for:item directive.
+  severity: error
+- code: LWC1048
+  description: Represents an error that occurs when the srcdoc attribute is used on an iframe.
+  severity: error
+- code: LWC1049
+  description: Represents an SVG tag error in the <svg> namespace.
+  severity: error
+- code: LWC1050
+  description: Represents an invalid MathML tag error.
+  severity: error
+- code: LWC1051
+  description: Represents a forbidden template tag error.
+  severity: error
+- code: LWC1052
+  description: Represents an unexpected error during template compilation.
+  severity: error
+- code: LWC1054
+  description: Represents an error that occurs when the if:* directive is assigned to a string literal
+    or has no value.
+  severity: error
+- code: LWC1055
+  description: Represents a case error in HTML attribute names.
+  severity: error
+- code: LWC1056
+  description: Represents a naming error on an event handler attribute.
+  severity: error
+- code: LWC1057
+  description: Represents a warning when an invalid attribute is used on an HTML element.
+  severity: warning
+- code: LWC1058
+  description: Represents an invalid HTML syntax error.
+  severity: error
+- code: LWC1063
+  description: Represents an is attribute error.
+  severity: error
+- code: LWC1064
+  description: Represents a key attribute error.
+  severity: error
+- code: LWC1065
+  description: Represents an invalid key value on an element.
+  severity: error
+- code: LWC1066
+  description: Represents an invalid key value for an element.
+  severity: error
+- code: LWC1071
+  description: Represents an error for a missing key for an element in an iterator.
+  severity: error
+- code: LWC1072
+  description: Represents an error for a missing root template tag.
+  severity: error
+- code: LWC1074
+  description: Represents an error for an expression that contains a semicolon.
+  severity: error
+- code: LWC1075
+  description: Represents an error for a template that contains more than one root-level node.
+  severity: error
+- code: LWC1076
+  description: Represents an error for a slot name is assigned to a dynamic expression.
+  severity: error
+- code: LWC1077
+  description: Represents an error for a non-root template tag that doesn't contain a directive.
+  severity: error
+- code: LWC1078
+  description: Represents an error for a missing closing tag.
+  severity: error
+- code: LWC1079
+  description: Represents an error for a missing root <template> element.
+  severity: error
+- code: LWC1080
+  description: Represents an error for an invalid attribute on the root <template> element.
+  severity: error
+- code: LWC1082
+  description: Represents an error for an invalid template directive on the <slot> element.
+  severity: error
+- code: LWC1083
+  description: Represents a template parsing error when JavaScript expressions in HTML templates have
+    syntax errors, unbalanced brackets, or other parsing issues.
+  severity: error
+- code: LWC1084
+  description: 'Represents an invalid modifier on the if: directive.'
+  severity: error
+- code: LWC1085
+  description: Represents an invalid value on the lwc:dom directive.
+  severity: error
+- code: LWC1086
+  description: Represents an error for a non-empty element with the lwc:dom directive.
+  severity: error
+- code: LWC1087
+  description: Represents an error for a custom element with the lwc:dom directive.
+  severity: error
+- code: LWC1088
+  description: Represents an error for an lwc:dom directive on any <slot> element.
+  severity: error
+- code: LWC1092
+  description: Represents an error for a missing parameter on a wire adapter.
+  severity: error
+- code: LWC1093
+  description: Represents an @api and @track combined usage error.
+  severity: error
+- code: LWC1094
+  description: Represents an @wire configuration object error.
+  severity: error
+- code: LWC1095
+  description: Represents an @api and @wire combined use error.
+  severity: error
+- code: LWC1096
+  description: Represents a duplicate @api property error.
+  severity: error
+- code: LWC1097
+  description: Represents a wire adapter identifier error.
+  severity: error
+- code: LWC1098
+  description: Represents an error when a @wire decorator's first parameter references a local binding.
+  severity: error
+- code: LWC1099
+  description: Represents an error on the default value of a boolean public property.
+  severity: error
+- code: LWC1100
+  description: Represents an error for invalid decorator usage.
+  severity: error
+- code: LWC1101
+  description: Represents an error for a decorator applied to a private class member.
+  severity: error
+- code: LWC1102
+  description: Represents an error for a decorator not properly imported from the lwc module.
+  severity: error
+- code: LWC1105
+  description: Represents an error for multiple @wire decorators on a single method or property.
+  severity: error
+- code: LWC1106
+  description: Represents an @api error when the decorator is used with the computed property syntax.
+  severity: error
+- code: LWC1107
+  description: Represents an error for a property name that starts with the "data" prefix.
+  severity: error
+- code: LWC1108
+  description: Represents an error for a property name that starts with the "on" prefix.
+  severity: error
+- code: LWC1109
+  description: Represents an error for a lowercase attribute name that corresponds to a property that
+    uses a camelCase name.
+  severity: error
+- code: LWC1110
+  description: Represents an error for a property name that corresponds to a reserved HTML attribute name.
+  severity: error
+- code: LWC1111
+  description: Represents an error for a property name that corresponds to a future reserved attribute
+    name.
+  severity: error
+- code: LWC1112
+  description: Represents an error for a duplicate @api declaration on a getter and setter.
+  severity: error
+- code: LWC1113
+  description: Represents an error for a @track decorator that is applied to a class method, getter, or
+    setter.
+  severity: error
+- code: LWC1116
+  description: Represents an error for an invalid folder name.
+  severity: error
+- code: LWC1121
+  description: Represents an error for an invalid import.
+  severity: error
+- code: LWC1122
+  description: Represents an error for a <style> element inside an LWC component's HTML template.
+  severity: error
+- code: LWC1123
+  description: Represents a warning for an unknown HTML tag.
+  severity: warning
+- code: LWC1124
+  description: Represents an error for an attribute name in an LWC template starts with an invalid character.
+  severity: error
+- code: LWC1125
+  description: Represents an error for an attribute name in an LWC template that ends with a non-alphanumeric
+    character.
+  severity: error
+- code: LWC1127
+  description: 'Represents an error for using an invalid lwc: directive on an element in an LWC template.'
+  severity: error
+- code: LWC1128
+  description: Represents an error for using lwc:dynamic without enabling the compiler option.
+  severity: error
+- code: LWC1129
+  description: Represents an error for using lwc:dynamic on an element that is not a custom element.
+  severity: error
+- code: LWC1130
+  description: Represents an error for passing a string literal to lwc:dynamic.
+  severity: error
+- code: LWC1131
+  description: Represents an error when you use computed property syntax to access a wire adapter in the
+    first parameter of the @wire decorator.
+  severity: error
+- code: LWC1132
+  description: Represents an error that occurs when the @wire identifier contains nested member expressions.
+  severity: error
+- code: LWC1133
+  description: Represents an error for setting lwc:render-mode to an invalid value.
+  severity: error
+- code: LWC1134
+  description: Represents an error for invalid attributes on a <slot>element.
+  severity: error
+- code: LWC1135
+  description: Represents an error for using lwc:dom="manual" on an element inside a Light DOM template.
+  severity: error
+- code: LWC1136
+  description: Represents an error placing for:each and iterator:* on the same element.
+  severity: error
+- code: LWC1137
+  description: Represents a warning for defining multiple slots with the same name within the same rendering
+    context.
+  severity: warning
+- code: LWC1138
+  description: Represents a warning for placing slots inside iteration blocks.
+  severity: warning
+- code: LWC1139
+  description: Represents an error for adding an event listener to a <slot> element inside a Light DOM
+    template.
+  severity: error
+- code: LWC1140
+  description: Represents an error for applying lwc:inner-html to a non-native HTML element.
+  severity: error
+- code: LWC1141
+  description: Represents an error for using lwc:inner-html on <slot> or <template>.
+  severity: error
+- code: LWC1143
+  description: Represents an error for an invalid lwc:inner-html usage on an element.
+  severity: error
+- code: LWC1144
+  description: Represents a warning for invalid HTML nesting.
+  severity: warning
+- code: LWC1149
+  description: Represents a warning for an invalid key attribute.
+  severity: warning
+- code: LWC1197
+  description: Represents an error that occurs when comments are used within template expressions.
+  severity: error
+- code: LWC1199
+  description: Represents an error that occurs when a template literal is used with the @wire configuration
+    object.
+  severity: error
+- code: LWC1200
+  description: Represents an error that occurs when an invalid expression is used in the @wire configuration
+    object.
+  severity: error
+- code: LWC1201
+  description: Represents a warning that occurs when an element with a slot attribute isn't a direct child
+    of a component.
+  severity: warning
+- code: LWC1703
+  description: Represents an invalid module identifier.
+  severity: error
+- code: LWC1704
+  description: Represents a missing resource value.
+  severity: error
+- code: LWC1709
+  description: Represents a syntax error when parsing a file.
+  severity: error
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

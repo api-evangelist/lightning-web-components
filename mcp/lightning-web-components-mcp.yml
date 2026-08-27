@@ -1,0 +1,112 @@
+generated: '2026-08-27'
+method: searched
+source: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-intro.html
+provider: Lightning Web Components
+providerId: lightning-web-components
+name: Salesforce DX MCP Server — LWC toolsets
+status: published
+ownership_note: >-
+  The MCP server is published as @salesforce/mcp by Salesforce, LWC's parent, and is documented
+  INSIDE the Lightning Web Components Developer Guide with a dedicated `lwc-experts` toolset plus
+  LWC-specific Lightning Data Service, SLDS, Aura-migration and Lightning Web Security tool groups.
+  LWC is a Salesforce product, so the parent-brand npm scope and docs host are the provider's own
+  surface; the tools listed below are the LWC-scoped subset, not the full 60+ DX tool inventory.
+deployment:
+  mode: local-stdio
+  endpoint: null
+  install: 'npx -y @salesforce/mcp@latest --orgs DEFAULT_TARGET_ORG --toolsets lwc-experts,aura-experts,experts-validation'
+  package: https://www.npmjs.com/package/@salesforce/mcp
+  auth: oauth
+  verified: searched
+  note: >-
+    No hosted/remote MCP endpoint is published — the server runs locally over stdio and must be
+    installed and started by a human before an agent can reach it. Org access is brokered through
+    the Salesforce CLI's stored OAuth connection (`--orgs DEFAULT_TARGET_ORG`). Beta service,
+    subject to Salesforce Beta Services Terms. The Agentforce Vibes IDE extension ships it enabled
+    by default.
+package_metadata:
+  name: '@salesforce/mcp'
+  registry: npm
+  version: 0.30.15
+  published: '2026-07-09'
+  repository: https://github.com/salesforcecli/mcp
+docs:
+  - title: Use DX MCP Tools for LWC (Beta)
+    url: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-intro.html
+  - title: LWC Development Tools (Beta)
+    url: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-lwc.html
+  - title: LWC MCP Tools Reference (Beta)
+    url: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-reference.html
+  - title: Lightning Data Service Tools (Beta)
+    url: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-lds.html
+toolsets:
+  - name: lwc-experts
+    description: LWC development, testing, and optimization.
+  - name: aura-experts
+    description: Aura component analysis and migration to LWC.
+  - name: experts-validation
+    description: Component validation and production readiness.
+tools:
+  - name: guide_lwc_development
+    description: Comprehensive LWC development workflow and implementation guidelines.
+  - name: guide_lwc_best_practices
+    description: Offers LWC development best practices and coding standards guidance.
+  - name: create_lwc_component_from_prd
+    description: Creates LWC components from PRD specifications with proper structure and best practices.
+  - name: orchestrate_lwc_component_creation
+    description: Step-by-step component creation workflow guidance.
+  - name: orchestrate_lwc_component_optimization
+    description: Performance optimization and best practices for LWC.
+  - name: guide_component_accessibility
+    description: Provides accessibility guidelines and testing instructions for Lightning web components.
+  - name: guide_lwc_rtl_support
+    description: Right-to-Left (RTL) internationalization support and RTL development guidance.
+  - name: orchestrate_lwc_slds2_uplift
+    description: Analyzes LWC code along with SLDS Linter output to fix issues using Salesforce Lightning Design System 2.
+  - name: explore_slds_blueprints
+    description: Retrieves guidelines for the SLDS component blueprints that you need.
+  - name: guide_slds_blueprints
+    description: Provides comprehensive SLDS component blueprint guidelines and reference documentation.
+  - name: explore_slds_styling
+    description: Provides usage patterns, accessibility notes, and validation checklists for semantic color styling hooks.
+  - name: guide_slds_styling
+    description: Provides comprehensive SLDS styling hook guidelines and reference documentation.
+  - name: reference_lwc_compilation_error
+    description: Offers guidance on fixing error codes returned during compilation.
+tool_groups_documented:
+  - group: Development Tools
+    count: 12
+  - group: Testing Tools
+    count: 5
+  - group: Lightning Base Components Tools
+    count: 2
+  - group: Lightning Data Service Tools
+    count: 8
+  - group: Figma to LWC Conversion Tool
+    count: 1
+  - group: SLDS Guideline Tool
+    count: 1
+  - group: Migration Tools
+    count: 2
+  - group: Lightning Web Security Tools
+    count: 1
+  - group: Aura MCP Tools
+    count: 4
+  - group: LWC Validation Tools
+    count: 2
+introspection:
+  attempted: false
+  reason: >-
+    tools/list could not be probed — there is no remote endpoint to POST to. The live inputSchema
+    for each tool requires installing the stdio server locally and connecting an authenticated
+    Salesforce org. Tool names and descriptions above are transcribed verbatim from the published
+    LWC Developer Guide, not from a live handshake.
+caveats:
+  - >-
+    Salesforce documentation surfaced in this pass indicates that as of August 2026 the LWC MCP
+    tools are being superseded by "LWC skills". A canonical LWC-skills reference page could not be
+    located during this pass, so no AgentSkill artifact is claimed on that basis.
+  - The LWC MCP tools are labelled Beta and governed by Salesforce Beta Services Terms.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

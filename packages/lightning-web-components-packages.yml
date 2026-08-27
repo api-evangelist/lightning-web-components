@@ -1,0 +1,199 @@
+generated: '2026-08-27'
+method: searched
+source: https://registry.npmjs.org/ (npm registry metadata endpoints, queried unauthenticated 2026-08-27)
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  First-party npm packages published by Salesforce for the Lightning Web Components
+  open-source framework. LWC is distributed exclusively through npm — there is no
+  HTTP API client library, because LWC is a browser/server JavaScript UI runtime rather
+  than a hosted service. Versions and publish dates below were read from the npm
+  registry metadata endpoint (registry.npmjs.org) on 2026-08-27.
+registries_checked:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/<pkg>
+    result: hit
+  - registry: PyPI
+    result: none — LWC has no Python distribution
+  - registry: Maven Central
+    result: none
+  - registry: NuGet
+    result: none
+  - registry: pkg.go.dev
+    result: none
+  - registry: RubyGems
+    result: none
+  - registry: Packagist
+    result: none
+  - registry: crates.io
+    result: none
+packages:
+  - name: lwc
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/lwc
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Meta-package for the Lightning Web Components framework; the entry point most apps install.
+  - name: '@lwc/engine-dom'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/engine-dom
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Renders LWC components in a DOM environment.
+  - name: '@lwc/engine-server'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/engine-server
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Renders LWC components in a server environment (SSR).
+  - name: '@lwc/ssr-runtime'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/ssr-runtime
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Runtime complement to @lwc/ssr-compiler.
+  - name: '@lwc/compiler'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/compiler
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: LWC compiler.
+  - name: '@lwc/synthetic-shadow'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/synthetic-shadow
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Synthetic Shadow Root polyfill for LWC.
+  - name: '@lwc/wire-service'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/wire-service
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: The @wire service implementation.
+  - name: '@lwc/aria-reflection'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/aria-reflection
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: ARIA element reflection polyfill for strings.
+  - name: '@lwc/rollup-plugin'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/rollup-plugin
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Rollup plugin to compile LWC.
+  - name: '@lwc/babel-plugin-component'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/babel-plugin-component
+    repository: https://github.com/salesforce/lwc
+    version: 9.4.1
+    published: '2026-08-12'
+    description: Babel plugin to transform an LWC module.
+  - name: '@lwc/jest-preset'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/jest-preset
+    version: 19.6.1
+    published: '2026-04-15'
+    description: Jest preset configuration and stubs to help test LWC.
+  - name: '@lwc/eslint-plugin-lwc'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@lwc/eslint-plugin-lwc
+    version: 3.5.0
+    published: '2026-03-27'
+    description: Official ESLint rules for LWC.
+  - name: '@salesforce/eslint-config-lwc'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@salesforce/eslint-config-lwc
+    version: 4.1.2
+    published: '2025-12-11'
+    description: Opinionated ESLint configurations for LWC projects.
+  - name: '@salesforce/sfdx-lwc-jest'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@salesforce/sfdx-lwc-jest
+    version: 7.9.0
+    published: '2026-04-01'
+    description: Run Jest against LWC components in a Salesforce DX workspace.
+  - name: lightning-base-components
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/lightning-base-components
+    version: 1.28.19-alpha
+    published: '2026-05-15'
+    description: >-
+      Base Lightning web components (the lightning-* namespace) for use off-platform.
+      Latest published dist-tag is a pre-release (-alpha) build.
+  - name: '@salesforce/lightning-types'
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/@salesforce/lightning-types
+    version: 0.10.1
+    published: '2026-04-30'
+    description: Type definitions for working with Salesforce Lightning.
+  - name: lwr
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/lwr
+    repository: https://github.com/salesforce-experience-platform-emu/lwr
+    version: 0.24.0
+    published: '2026-08-24'
+    description: Lightning Web Runtime — the first-party scaffolding and dev-server runtime lwc.dev directs new projects to.
+  - name: create-lwr
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/create-lwr
+    repository: https://github.com/salesforce-experience-platform-emu/lwr
+    version: 0.24.0
+    published: '2026-08-24'
+    description: Project scaffolder invoked by `npm init lwr`, the install path documented at https://lwc.dev/guide/install.
+  - name: create-lwc-app
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/create-lwc-app
+    version: 3.2.2
+    published: '2021-10-08'
+    deprecated_signal: true
+    description: >-
+      Legacy LWC project scaffolder. DECAY SIGNAL — last published 2021-10-08, nearly five years
+      before the current framework release (lwc 9.4.1, 2026-08-12). lwc.dev now documents
+      `npm init lwr` instead. Recorded here as evidence, not as a recommended install path.
+  - name: lwc-services
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/lwc-services
+    version: 3.2.2
+    published: '2021-10-08'
+    deprecated_signal: true
+    description: >-
+      Legacy build/test tooling that accompanied create-lwc-app. DECAY SIGNAL — last published
+      2021-10-08; superseded by LWR.
+notes:
+  - The framework core (lwc, @lwc/*) releases in lockstep; all core packages were at 9.4.1 on 2026-08-12.
+  - >-
+    Two first-party scaffolders (create-lwc-app, lwc-services) have not been published since 2021 while
+    the framework itself ships monthly. The live scaffolding path is `npm init lwr`.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

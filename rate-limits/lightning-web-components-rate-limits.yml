@@ -3,90 +3,34 @@ specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
 provider: Lightning Web Components
 providerId: lightning-web-components
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/ (full open-source developer guide reviewed 2026-08-27 — no rate limits documented, and none possible)
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-08-27'
 tags:
   - Frontend
   - JavaScript
   - Lightning Web Components
   - Salesforce
   - Web Components
-  - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Lightning Web Components API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Lightning Web Components Runtime API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Lightning Web Components Runtime API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Lightning Web Components Runtime API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Lightning Web Components Runtime API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Lightning Web Components Runtime API
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+description: >-
+  Lightning Web Components publishes no rate limits, and cannot: LWC is a compiler and a
+  client/server rendering runtime distributed on npm, with no hosted endpoint to throttle, no API
+  key to scope a limit to, and no HTTP response in which to signal one. This file replaces a
+  2026-05-04 bulk-sweep scaffold that invented per-minute and per-month request quotas, burst
+  ceilings, 429 semantics and X-RateLimit-* response headers for a framework that issues no
+  requests of its own.
+limit_count: 0
+limits: []
+headers: {}
+responseCodes: {}
+applicability:
+  http_surface: false
+  note: >-
+    Where a component fetches data on the Salesforce Platform, the governing limits are the
+    platform's API request allocations against the org — a Salesforce Platform concern, not an LWC
+    one, and deliberately not restated here as if LWC published them.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

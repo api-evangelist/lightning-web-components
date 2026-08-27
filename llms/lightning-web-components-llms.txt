@@ -1,0 +1,79 @@
+# Lightning Web Components
+
+> Lightning Web Components (LWC) is an MIT-licensed, open-source JavaScript UI framework built by
+> Salesforce on native web standards — custom elements, shadow DOM, ES modules. It compiles
+> components to native custom elements, runs in the browser and on the server (SSR), and is the
+> component model for the Salesforce Platform. LWC is a library, not a hosted service: there is no
+> HTTP API, no API key, no pricing and no rate limit. It is distributed exclusively through npm.
+
+Generated 2026-08-27 by the API Evangelist enrichment pipeline from this repository's artifacts and
+the provider's own published documentation. Not served by the provider — the provider publishes no
+llms.txt (probed https://lwc.dev/llms.txt HTTP 500, https://developer.salesforce.com/llms.txt HTTP 403).
+
+## What LWC actually is
+
+- Distribution: npm only. Core package `lwc` 9.4.1 (published 2026-08-12); framework internals under `@lwc/*` release in lockstep.
+- Contract surface: a JavaScript API (LightningElement, decorators, lifecycle hooks, wire adapters), not an OpenAPI/GraphQL/AsyncAPI contract. No machine-readable API description exists, and none is expected for this class of product.
+- License: MIT — https://github.com/salesforce/lwc/blob/master/LICENSE.md
+- Source: https://github.com/salesforce/lwc
+
+## Documentation
+
+- [LWC Open Source docs](https://lwc.dev/): The open-source developer guide — the authoritative source for framework behaviour.
+- [Installation](https://lwc.dev/guide/install): Scaffold with `npm init lwr@latest`, or integrate via rollup and `@lwc/rollup-plugin`.
+- [ES Modules](https://lwc.dev/guide/es_modules): Module format, module resolution, and lwc.config.json.
+- [Component Lifecycle](https://lwc.dev/guide/lifecycle): constructor(), connectedCallback(), render(), renderedCallback(), disconnectedCallback(), errorCallback().
+- [Reactivity](https://lwc.dev/guide/javascript_reactive): Fields are reactive by default; @track is legacy, @api is the public interface, @wire binds data.
+- [Wire Adapters](https://lwc.dev/guide/wire_adapter): The data-binding contract.
+- [Versioning](https://lwc.dev/guide/versioning): semver, breaking-change catalogue per major, and the LWC-OSS-to-Salesforce-API-version map.
+- [Error Codes and Messages](https://lwc.dev/guide/error_codes): 109 documented LWC<NNNN> diagnostics with severity.
+- [Accessibility](https://lwc.dev/guide/accessibility): Focus handling, tabindex (0 and -1 only), ARIA.
+- [Light DOM](https://lwc.dev/guide/light_dom) and [Third-Party Web Components (Beta)](https://lwc.dev/guide/third_party_web_components): Encapsulation opt-out and `lwc:external` interop.
+- [LWC Developer Guide (Salesforce Platform)](https://developer.salesforce.com/docs/platform/lwc/guide/get-started-introduction.html): The on-platform variant, including component API versioning.
+
+## Getting started
+
+    npm init lwr@latest      # choose Single Page App, then LWC
+    cd YourProjectName
+    npm install
+    npm run start
+
+## Agent surface
+
+- MCP: Salesforce DX MCP Server, `@salesforce/mcp` (v0.30.15, 2026-07-09). LOCAL STDIO ONLY — there is no remote endpoint an agent can reach unaided. Install: `npx -y @salesforce/mcp@latest --orgs DEFAULT_TARGET_ORG --toolsets lwc-experts,aura-experts,experts-validation`. Beta. Docs: https://developer.salesforce.com/docs/platform/lwc/guide/mcp-intro.html
+- 13 documented LWC tools including guide_lwc_development, create_lwc_component_from_prd, orchestrate_lwc_component_creation, guide_component_accessibility, orchestrate_lwc_slds2_uplift, reference_lwc_compilation_error.
+- A2A: no agent card is served. Probed /.well-known/agent-card.json and /.well-known/agent.json on lwc.dev, developer.salesforce.com, www.salesforce.com and recipes.lwc.dev — no document returned on any host.
+- /.well-known/: nothing served. See well-known/lightning-web-components-well-known.yml for the full probe record.
+
+## Components
+
+- `lightning-base-components` 1.28.19-alpha (2026-05-15) publishes 211 modules, of which 91 are consumer-facing `lightning-*` components across forms/input, buttons/menus, data display, layout/navigation, overlays/feedback and device families.
+- [Lightning Component Library](https://developer.salesforce.com/docs/component-library/overview/components)
+- [LWC Recipes](https://recipes.lwc.dev/) — runnable sample implementations.
+
+## Try it
+
+- [LWC Playground](https://playground.lwc.dev/) — forks the first-party playground from salesforce/lwc into StackBlitz. StackBlitz is a third party subject to its own terms.
+
+## Tooling
+
+- Test: `@salesforce/sfdx-lwc-jest` 7.9.0, `@lwc/jest-preset` 19.6.1
+- Lint: `@lwc/eslint-plugin-lwc` 3.5.0, `@salesforce/eslint-config-lwc` 4.1.2
+- Build: `@lwc/rollup-plugin`, `@lwc/babel-plugin-component`
+- Runtime: `lwr` / `create-lwr` 0.24.0 (2026-08-24)
+- Legacy, do not use: `create-lwc-app` and `lwc-services`, both last published 2021-10-08.
+
+## Support and security
+
+- [Issues](https://github.com/salesforce/lwc/issues)
+- [Community](https://lwc.dev/community)
+- [Contributing](https://github.com/salesforce/lwc/blob/master/CONTRIBUTING.md)
+- [Security policy](https://github.com/salesforce/lwc/blob/master/SECURITY.md) — report to security@salesforce.com
+- [Salesforce responsible disclosure](https://www.salesforce.com/company/disclosure/) and [bug bounty](https://hackerone.com/salesforce)
+
+## Things LWC does not have
+
+- No OpenAPI, GraphQL, AsyncAPI, gRPC or WSDL contract — the framework exposes no network interface.
+- No plans, pricing, quotas or rate limits. MIT-licensed and free.
+- No OAuth scopes or authentication surface of its own.
+- No status page or SLA of its own; https://status.salesforce.com/ covers the parent platform components run on.

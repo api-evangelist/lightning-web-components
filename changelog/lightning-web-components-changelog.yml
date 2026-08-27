@@ -1,0 +1,86 @@
+generated: '2026-08-27'
+method: searched
+source: https://github.com/salesforce/lwc/releases (GitHub Releases API for salesforce/lwc, fetched 2026-08-27)
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Dated release log for the Lightning Web Components open-source framework. LWC publishes no
+  CHANGELOG.md at the repository root (probed
+  https://raw.githubusercontent.com/salesforce/lwc/master/CHANGELOG.md — HTTP 404); the canonical
+  dated changelog is the GitHub Releases stream on salesforce/lwc, with breaking changes
+  additionally catalogued per major version in the versioning guide at
+  https://lwc.dev/guide/versioning. Recent window only — the eight most recent releases returned by
+  the API on 2026-08-27.
+scheme: semver (major.minor.patch)
+current_version: v9.4.1
+current_version_date: '2026-08-12'
+changelog_url: https://github.com/salesforce/lwc/releases
+breaking_change_reference: https://lwc.dev/guide/versioning
+entry_count: 8
+entries:
+  - version: v9.3.7
+    date: '2026-08-13'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.3.7
+    highlights:
+      - 'fix(ssr-compiler): register @api props on in-file base classes (W-23508928) [cherry-pick #5853]'
+  - version: v9.4.1
+    date: '2026-08-12'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.4.1
+    highlights:
+      - 'chore(ci): remove stale SFCI itest preprocessor-tag pin'
+      - 'fix(hydration): only hydrate components (W-23722850)'
+  - version: v9.4.0
+    date: '2026-08-10'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.4.0
+    highlights:
+      - 'build(deps): bump systeminformation from 5.31.6 to 5.31.17'
+      - 'build(deps): bump js-yaml from 4.2.0 to 4.3.0'
+  - version: v9.3.6
+    date: '2026-07-21'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.3.6
+    highlights:
+      - 'chore: remove ENABLE_LEGACY_SCOPE_TOKENS feature flag'
+  - version: v9.3.5
+    date: '2026-07-17'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.3.5
+    highlights:
+      - 'build(deps): bump js-yaml from 4.1.0 to 4.2.0'
+      - 'build(deps): bump vite from 8.0.5 to 8.0.16'
+  - version: v9.3.4
+    date: '2026-06-01'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.3.4
+    highlights:
+      - 'build(deps): bump fast-xml-parser from 5.5.7 to 5.7.1'
+      - 'build(deps): bump postcss from 8.5.9 to 8.5.10'
+  - version: v9.2.2
+    date: '2026-04-29'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.2.2
+    highlights:
+      - 'chore: remove ENABLE_LEGACY_CONTEXT_CONNECTION'
+      - 'fix: remove ENABLE_LEGACY_SIGNAL_CONTEXT_VALIDATION that has not been used in 3 releases'
+  - version: v9.1.5
+    date: '2026-04-28'
+    breaking: false
+    url: https://github.com/salesforce/lwc/releases/tag/v9.1.5
+    highlights:
+      - 'Fix attach shadow in synthetic (backport)'
+notes:
+  - >-
+    Release tags interleave across maintenance lines — v9.3.7 published 2026-08-13, after v9.4.1 on
+    2026-08-12 — because patch fixes are cherry-picked back onto the previous minor line.
+  - >-
+    Breaking changes are NOT recorded in the releases stream; they are catalogued per major version
+    (v2.0.0 through v8.0.0) in the versioning guide. None of the eight entries above is a major.
+  - >-
+    A deeper release window could not be captured in this pass: the unauthenticated GitHub API
+    returned HTTP 403 rate-limit-exceeded on the follow-up request.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

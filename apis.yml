@@ -1,8 +1,16 @@
 aid: lightning-web-components
 name: Lightning Web Components
 description: >-
-  Salesforce Lightning Web Components (LWC) is a modern JavaScript framework
-  for building user interfaces on the Salesforce platform using web standards.
+  Lightning Web Components (LWC) is Salesforce's MIT-licensed, open-source JavaScript UI
+  framework, built directly on native web standards — custom elements, shadow DOM and ES
+  modules — rather than on a proprietary component abstraction. It compiles components to
+  native custom elements, renders in the browser and on the server, and is the component
+  model for the Salesforce Platform as well as a standalone framework for any web app. LWC
+  is distributed exclusively through npm: there is no hosted API, no API key, no pricing
+  and no rate limit. Its contract surface is a JavaScript API — LightningElement, the @api,
+  @track and @wire decorators, lifecycle hooks and wire adapters — accompanied by a
+  published 109-code compiler diagnostic registry, a semver versioning and breaking-change
+  policy, and a lightning-* base component library of 91 consumer-facing components.
 type: Index
 accessModel:
   pricing: freemium
@@ -23,9 +31,14 @@ tags:
   - Lightning Web Components
   - Salesforce
   - Web Components
+  - Custom Elements
+  - Shadow DOM
+  - Open Source
+  - UI Framework
+  - Component Library
 url: https://raw.githubusercontent.com/api-evangelist/lightning-web-components/refs/heads/main/apis.yml
 created: '2024-01-15'
-modified: '2026-03-16'
+modified: '2026-08-27'
 specificationVersion: '0.23'
 apis:
   - aid: lightning-web-components:lightning-web-components
@@ -43,6 +56,8 @@ apis:
       - type: Documentation
         url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
 common:
+  - type: Website
+    url: https://lwc.dev/
   - type: DomainSecurity
     url: security/lightning-web-components-domain-security.yml
   - url: https://developer.salesforce.com/docs/component-library/overview/components
@@ -51,6 +66,69 @@ common:
     type: GettingStarted
   - url: https://github.com/trailheadapps/lwc-recipes
     type: Examples
+  - type: Packages
+    url: packages/lightning-web-components-packages.yml
+  - type: SDKs
+    url: packages/lightning-web-components-packages.yml
+  - type: MCPServer
+    url: mcp/lightning-web-components-mcp.yml
+  - type: LLMsTxt
+    url: llms/lightning-web-components-llms.txt
+  - type: Conformance
+    url: conformance/lightning-web-components-conformance.yml
+  - type: ErrorCatalog
+    url: errors/lightning-web-components-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/lightning-web-components-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/lightning-web-components-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/lightning-web-components-changelog.yml
+  - type: Conventions
+    url: conventions/lightning-web-components-conventions.yml
+  - type: CLI
+    url: cli/lightning-web-components-cli.yml
+  - type: Components
+    url: components/lightning-web-components-components.yml
+  - type: Sandbox
+    url: sandbox/lightning-web-components-sandbox.yml
+  - type: VulnerabilityDisclosure
+    url: security/lightning-web-components-vulnerability-disclosure.yml
+  - type: Security
+    url: security/lightning-web-components-vulnerability-disclosure.yml
+  - type: TrustCenter
+    url: security/lightning-web-components-trust-center.yml
+  - type: Compliance
+    url: security/lightning-web-components-trust-center.yml
+  - type: Plans
+    url: plans/lightning-web-components-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/lightning-web-components-rate-limits.yml
+  - type: DeveloperPortal
+    url: https://lwc.dev/
+  - type: APIReference
+    url: https://lwc.dev/guide/reference
+  - type: Support
+    url: https://lwc.dev/community
+  - type: Blog
+    url: https://developer.salesforce.com/blogs/
+  - type: GitHubOrganization
+    url: https://github.com/salesforce
+  - type: SourceCode
+    url: https://github.com/salesforce/lwc
+  - type: License
+    url: https://github.com/salesforce/lwc/blob/master/LICENSE.md
+  - type: TermsOfService
+    url: https://www.salesforce.com/company/legal/sfdc-website-terms-of-service/
+  - type: PrivacyPolicy
+    url: https://www.salesforce.com/company/privacy/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-27'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1
+x-parent: salesforce
+x-relationship: product

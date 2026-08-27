@@ -1,0 +1,156 @@
+generated: '2026-08-27'
+method: searched
+source: https://lwc.dev/guide/ (LWC open-source developer guide, read 2026-08-27)
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Cross-cutting conventions an implementer or an agent must know to write Lightning Web Components
+  correctly. LWC is a client/server rendering framework rather than an HTTP API, so the usual
+  HTTP-shaped conventions (auth headers, pagination, idempotency keys, rate-limit headers) have no
+  referent. What exists instead — and what is captured here — is a module system, a naming and
+  reactivity contract, a lifecycle contract, an event contract, and a compile-time diagnostic
+  format. Every rule below is transcribed from the project's own guide.
+auth_style:
+  applicable: false
+  note: >-
+    No authentication surface. LWC compiles and renders; any network call a component makes is the
+    application's own concern. On the Salesforce Platform, data access goes through the wire service
+    against platform APIs, authenticated by the user's org session — not by LWC.
+module_system:
+  format: ECMAScript modules
+  statement: '"All JavaScript files in Lightning web components are ES modules."'
+  core_import: "import { LightningElement } from 'lwc';"
+  default_export: A class extending LightningElement, described as "a custom wrapper of the standard HTML element."
+  resolution:
+    config_file: lwc.config.json
+    shape: '{ "modules": [ { "dir": "src/modules" } ] }'
+    purpose: Tells the compiler where to find modules at build time.
+    caveat: '"Module resolution is not available on the Salesforce Platform."'
+    docs: https://lwc.dev/guide/es_modules
+  namespaces:
+    - namespace: lwc
+      meaning: Framework core — LightningElement, createElement, api, track, wire.
+    - namespace: lightning/*
+      meaning: Base component library (lightning-* components).
+    - namespace: '@salesforce/*'
+      meaning: Platform-scoped modules (labels, resources, Apex, user, schema) — Salesforce Platform only.
+    - namespace: c/*
+      meaning: Custom components in the default namespace on the Salesforce Platform.
+    - namespace: x/*
+      meaning: Conventional namespace for application components in LWC OSS projects.
+naming:
+  module_folder: camelCase (for example myComponent/myComponent.js)
+  template_tag: kebab-case with a required hyphen (for example <c-my-component>)
+  custom_element_rule: >-
+    Per the custom elements spec, "the name must contain a hyphen and be unique on a page." LWC
+    derives the tag name from the module name automatically.
+  public_property: camelCase in JavaScript, kebab-case as an HTML attribute.
+reactivity:
+  model: >-
+    Fields are reactive by default. The @track decorator was required before LWC 1.17; JavaScript
+    proxies now handle reactivity automatically and @track is retained only for backwards
+    compatibility and for deep mutation of objects/arrays in older code.
+  public_api: '@api marks a property or method as part of the component''s public interface, readable and settable by a parent.'
+  data_binding: '@wire binds a component field or function to a wire adapter, re-invoking on reactive parameter change.'
+  docs: https://lwc.dev/guide/javascript_reactive
+lifecycle:
+  hooks:
+    - name: constructor()
+      direction: parent to child
+      rules:
+        - First statement must be super() with no parameters.
+        - No return statement other than a simple early return.
+        - Do not call document.write() or document.open().
+        - Do not inspect element attributes or children — they do not exist yet.
+        - Do not inspect public properties — they are set after construction.
+        - Do not add attributes to the host element during construction.
+    - name: connectedCallback()
+      direction: parent to child
+      note: Invoked when the component is inserted into the DOM. Can fire more than once — for example when reordering a list.
+    - name: render()
+      note: Overrides the default template selection.
+    - name: renderedCallback()
+      direction: child to parent
+      note: Called after the component and its children render.
+    - name: disconnectedCallback()
+      direction: parent to child on removal
+      note: Called when the component is removed from the DOM.
+    - name: errorCallback(error, stack)
+      note: Error boundary for descendant components.
+  deprecated: Deprecated synthetic custom element lifecycle (documented as such).
+  docs: https://lwc.dev/guide/lifecycle
+encapsulation:
+  default: Native Shadow DOM
+  polyfill: '@lwc/synthetic-shadow for engines without native support'
+  opt_out: Light DOM (https://lwc.dev/guide/light_dom)
+  third_party_interop: 'lwc:external is the recommended directive for rendering third-party custom elements; lwc:dom="manual" and iframes are the fallbacks.'
+error_envelope:
+  format: 'LWC<NNNN>: <message>'
+  channels:
+    - compile-time errors — blocking, observed in terminal or CLI output
+    - run-time warnings — non-blocking, observed in the browser web console
+  catalog: errors/lightning-web-components-error-codes.yml
+  code_count: 109
+  docs: https://lwc.dev/guide/error_codes
+versioning:
+  scheme: semver, with the documented deviation that a minor bump also signals changed compiler output
+  component_pin: apiVersion in the component's *.js-meta.xml (Salesforce Platform); always latest in LWC OSS
+  detail: lifecycle/lightning-web-components-lifecycle.yml
+  docs: https://lwc.dev/guide/versioning
+accessibility:
+  tabindex: Only the values 0 and -1 are supported.
+  guidance: Focus skips the component container and moves to focusable elements inside it.
+  aria: '@lwc/aria-reflection ships ARIA element reflection for strings.'
+  docs: https://lwc.dev/guide/accessibility
+pagination:
+  applicable: false
+  note: No HTTP collection endpoints exist.
+rate_limit_signaling:
+  applicable: false
+  note: No HTTP surface, therefore no RateLimit-* or Retry-After headers. See rate-limits/lightning-web-components-rate-limits.yml.
+request_id_tracing:
+  applicable: false
+  note: >-
+    No request correlation surface. Internal Salesforce work items appear in release notes as W-#
+    identifiers, but those are issue references, not client-observable trace IDs.
+idempotency:
+  supported: na
+  note: >-
+    Not applicable — there is no remote write surface to make idempotent. Rendering is declarative
+    and re-entrant by design, but that is a rendering property, not an idempotency key contract. No
+    Idempotency pointer is emitted, because asserting one here would be false.
+dry_run_mode:
+  supported: na
+  note: >-
+    Not applicable. The nearest equivalent is compiling without deploying, or running the component
+    in the playground — neither is an API dry-run affordance.
+reversibility:
+  applicable: na
+  grade: na
+  note: >-
+    LWC exposes no remote write surface, so there is no action for an agent to take that could need
+    taking back — no cancel, refund, void, reverse, undo, rollback or restore operation exists to
+    document, and no window could be stated. The one place reversibility DOES have a referent for
+    LWC is version movement, recorded below, but that is a developer-side upgrade path rather than a
+    runtime reversal, so it is not graded as a reversal operation.
+  write_surfaces: []
+  adjacent_reversal_paths:
+    - surface: component API version
+      mechanism: >-
+        Pinning apiVersion in the component's *.js-meta.xml holds the component on the framework
+        behaviour of a specific Salesforce release, so an unwanted framework change can be backed
+        out by lowering the pinned version rather than by reverting the component.
+      window_stated: false
+      docs: https://developer.salesforce.com/docs/platform/lwc/guide/create-version-components.html
+      note: >-
+        Salesforce documents upgrading one version at a time; it does NOT state a supported window
+        for how far back a component may be pinned, so no window is asserted here.
+cross_references:
+  errors: errors/lightning-web-components-error-codes.yml
+  lifecycle: lifecycle/lightning-web-components-lifecycle.yml
+  conformance: conformance/lightning-web-components-conformance.yml
+  components: components/lightning-web-components-components.yml
+  packages: packages/lightning-web-components-packages.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

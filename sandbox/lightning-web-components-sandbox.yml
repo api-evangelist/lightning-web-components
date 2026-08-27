@@ -1,0 +1,48 @@
+generated: '2026-08-27'
+method: probed
+source: https://playground.lwc.dev/ (probed 2026-08-27, HTTP 302) and https://lwc.dev/guide/install
+provider: Lightning Web Components
+providerId: lightning-web-components
+description: >-
+  Try-before-you-install surface for Lightning Web Components. LWC operates no hosted service, so
+  there is no test/live key duality, no test cards, no test clocks and no fixture API — the
+  equivalent surface is an in-browser playground plus a runnable sample app. Both are recorded here
+  with what they actually are.
+test_credentials:
+  applicable: false
+  note: >-
+    Not applicable. LWC is a compiler and client/server rendering runtime distributed on npm. There
+    are no API keys, no test-mode prefixes, no test cards or bank accounts, no time simulation and
+    no fixture-trigger tooling, because there is no hosted API to authenticate against.
+playground:
+  name: LWC Playground
+  launcher_url: https://playground.lwc.dev/
+  launcher_status: 302
+  redirects_to: https://stackblitz.com/fork/github/salesforce/lwc/tree/master/playground
+  source_of_truth: https://github.com/salesforce/lwc/tree/master/playground
+  first_party_source: true
+  hosted_by: StackBlitz (third party)
+  note: >-
+    The playground PROJECT is first-party — it lives in the salesforce/lwc repository under
+    playground/ and playground.lwc.dev is a redirect that forks it into StackBlitz. The execution
+    environment is a third party's. lwc.dev states plainly: "LWC.studio and StackBlitz are
+    third-party products and are subject to their own terms and conditions. Paid options on these
+    sites are not services offered by Salesforce."
+  docs: https://lwc.dev/guide/install
+sample_app:
+  name: LWC Recipes
+  url: https://recipes.lwc.dev/
+  status: 200
+  repository: https://github.com/trailheadapps/lwc-recipes
+  first_party: true
+  note: >-
+    A running catalogue of small, copyable LWC implementations, already wired into apis.yml as the
+    Examples pointer.
+local_sandbox:
+  command: npm init lwr@latest
+  note: >-
+    The documented zero-to-running path is local, not hosted — scaffold with LWR, `npm install`,
+    `npm run start`. See cli/lightning-web-components-cli.yml.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
