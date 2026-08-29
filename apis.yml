@@ -12,6 +12,18 @@ description: >-
   published 109-code compiler diagnostic registry, a semver versioning and breaking-change
   policy, and a lightning-* base component library of 91 consumer-facing components.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
