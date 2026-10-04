@@ -13,16 +13,19 @@ description: >-
   policy, and a lightning-* base component library of 91 consumer-facing components.
 type: Index
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - salesforce/lwc
   open_source: unknown
   commercial: true
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -45,7 +48,7 @@ tags:
   - Web Components
   - Custom Elements
   - Shadow DOM
-  - Open-Source
+  - Open Source
   - UI Framework
   - Component Library
 tags_raw:
@@ -59,6 +62,7 @@ tags_raw:
   - Open Source
   - UI Framework
   - Component Library
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/lightning-web-components/refs/heads/main/apis.yml
 created: '2024-01-15'
 modified: '2026-08-27'
