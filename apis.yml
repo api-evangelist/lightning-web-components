@@ -83,6 +83,8 @@ apis:
       - type: Documentation
         url: https://developer.salesforce.com/docs/component-library/documentation/en/lwc
 common:
+  - type: FinOps
+    url: finops/lightning-web-components-finops.yml
   - type: Website
     url: https://lwc.dev/
   - type: DomainSecurity
