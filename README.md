@@ -1,4 +1,4 @@
-# Lightning Web Components (lightning-web-components)
+# Lightning Web Components
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,54 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Salesforce Lightning Web Components (LWC) is a modern JavaScript framework for building user interfaces on the Salesforce platform using web standards.
+Lightning Web Components (LWC) is Salesforce's MIT-licensed, open-source JavaScript UI framework, built directly on native web standards — custom elements, shadow DOM and ES modules — rather than on a proprietary component abstraction. It compiles components to native custom elements, renders in the browser and on the server, and is the component model for the Salesforce Platform as well as a standalone framework for any web app. LWC is distributed exclusively through npm: there is no hosted API, no API key, no pricing and no rate limit. Its contract surface is a JavaScript API — LightningElement, the @api, @track and @wire decorators, lifecycle hooks and wire adapters — accompanied by a published 109-code compiler diagnostic registry, a semver versioning and breaking-change policy, and a lightning-* base component library of 91 consumer-facing components.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/lightning-web-components/refs/heads/main/apis.yml)
+**Areas:** Frontend · JavaScript · Lightning Web Components · Salesforce · Web Components · Custom Elements · Shadow DOM · Open Source · UI Framework · Component Library
 
-## Scope
+## Lightning Web Components on APIs.io
 
-- **Type:** Index
+Everything profiled for Lightning Web Components is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lightning-web-components/](https://apis.io/providers/lightning-web-components/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Frontend
-- JavaScript
-- Lightning Web Components
-- Salesforce
-- Web Components
+- [Lightning Web Components Runtime API](https://apis.io/apis/lightning-web-components/lightning-web-components/) — Core JavaScript APIs for building Lightning Web Components including decorators, wire service, and component lifecycle methods.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-03-16
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Lightning Web Components Runtime API
+Model Context Protocol servers that expose the API to agents.
 
-Core JavaScript APIs for building Lightning Web Components including decorators, wire service, and component lifecycle methods.
+- [Salesforce DX MCP Server — LWC toolsets](https://apis.io/servers/lightning-web-components/salesforce-dx-mcp-server-lwc-toolsets/)
 
-**Human URL:** [https://developer.salesforce.com/docs/component-library/documentation/en/lwc](https://developer.salesforce.com/docs/component-library/documentation/en/lwc)
+#### Security (3)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Frontend
-- JavaScript
-- Salesforce
-- Web Components
+- [Lightning Web Components Domain Security](https://apis.io/security/lightning-web-components/lightning-web-components-domain-security/)
+- [Lightning Web Components Trust Center](https://apis.io/security/lightning-web-components/lightning-web-components-trust-center/)
+- [Lightning Web Components Vulnerability Disclosure](https://apis.io/security/lightning-web-components/lightning-web-components-vulnerability-disclosure/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://developer.salesforce.com/docs/component-library/documentation/en/lwc)
+Published plans, tiers and prices.
 
-## Common Properties
+- [Lightning Web Components Plans Pricing](https://apis.io/plans/lightning-web-components/lightning-web-components-plans-pricing/)
 
+#### Rate limits (1)
+
+Published request limits.
+
+- [Lightning Web Components Rate Limits](https://apis.io/rate-limits/lightning-web-components/lightning-web-components-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Lightning Web Components Finops](https://apis.io/finops/lightning-web-components/lightning-web-components-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://lwc.dev/)
 - [Documentation](https://developer.salesforce.com/docs/component-library/overview/components)
-- [GettingStarted](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction)
-- [Examples](https://github.com/trailheadapps/lwc-recipes)
+- [Getting started](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction)
+- [API reference](https://lwc.dev/guide/reference)
+- [Support](https://lwc.dev/community)
+- [Blog](https://developer.salesforce.com/blogs/)
+- [Terms of service](https://www.salesforce.com/company/legal/sfdc-website-terms-of-service/)
+- [Privacy policy](https://www.salesforce.com/company/privacy/)
+- [GitHub](https://github.com/salesforce)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 37.3** — thin · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 63.3 |
+| Contract quality | 6.5 |
+| Contract governance | 18.2 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 66.7 |
+| Access clarity | 36.8 |
+
+**Agent readiness 10.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lightning-web-components/](https://apis.io/providers/lightning-web-components/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lightning Web Components: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lightning-web-components/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
